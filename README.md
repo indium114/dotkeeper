@@ -2,6 +2,8 @@
 
 ![A preview of Dotkeeper applying a keep](assets/preview.png)
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/StikyPiston/dotkeeper)
+
 A *keeper* for your *dotfiles*. See what I did there? *(booooooo)*
 
 To get started, create a folder in `~/.dotkeep` with the name of your **keep**. A **keep** is a place where dots are kept.
