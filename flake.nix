@@ -36,7 +36,7 @@
           meta = with pkgs.lib; {
             description = "A simple, flexible symlink farm tool";
             license = licenses.mit;
-            platforms = platforms.linux;
+            platforms = platforms.all;
           };
         };
 
