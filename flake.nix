@@ -24,11 +24,11 @@
 
         packages.dotkeeper = pkgs.buildGoModule {
           pname = "dotkeeper";
-          version = "2026.01.29-a";
+          version = "2026.03.14-a";
 
           src = self;
 
-          vendorHash = "sha256-FBb8RFndx6wwdu08B95d+qas4VWs6Vr7UrXVGLyCW0g=";
+          vendorHash = "sha256-jsyPil1E8oWD8VReGZfVW0TEuFSskV3WXkhHNNK5o70=";
 
           subPackages = [ "." ];
           ldflags = [ "-s" "-w" ];
