@@ -1,6 +1,6 @@
 package main
 
-import "github.com/stikypiston/dotkeeper/cmd"
+import "github.com/indium114/dotkeeper/cmd"
 
 func main() {
 	cmd.Execute()

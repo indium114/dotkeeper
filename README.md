@@ -2,7 +2,7 @@
 
 ![A preview of Dotkeeper applying a keep](assets/preview.png)
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/StikyPiston/dotkeeper)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/indium114/dotkeeper)
 
 A *keeper* for your *dotfiles*. See what I did there? *(booooooo)*
 
@@ -10,7 +10,7 @@ To get started, create a folder in `~/.dotkeep` with the name of your **keep**. 
 
 ## Info
 
-To learn how to use Dotkeeper, see the [wiki](https://github.com/StikyPiston/dotkeeper/wiki)
+To learn how to use Dotkeeper, see the [wiki](https://github.com/indium114/dotkeeper/wiki)
 
 ## Installation
 
@@ -19,7 +19,7 @@ To learn how to use Dotkeeper, see the [wiki](https://github.com/StikyPiston/dot
 To install with `brew`, simply run:
 
 ```bash
-brew install stikypiston/formulae/dotkeeper
+brew install indium114/formulae/dotkeeper
 ```
 
 ### Method 2: Manual Install

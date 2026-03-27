@@ -1,4 +1,4 @@
-module github.com/stikypiston/dotkeeper
+module github.com/indium114/dotkeeper
 
 go 1.25.5
 
