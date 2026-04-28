@@ -6,8 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/spf13/cobra"
 	"github.com/fatih/color"
+	"github.com/spf13/cobra"
 )
 
 func LoadState() (State, error) {
@@ -49,14 +49,14 @@ func DeactivateKeep() error {
 	for _, link := range st.Links {
 		dest, err := ExpandPath(link.Target)
 		if err != nil {
-			color.Red(" Cannot expand %s: %v\n", link.Target, err)
+			color.Red(" Failed to expand %s: %v\n", link.Target, err)
 			continue
 		}
 
 		if fi, err := os.Lstat(dest); err == nil {
 			if fi.Mode()&os.ModeSymlink != 0 || fi.Mode().IsRegular() {
 				if err := os.Remove(dest); err != nil {
-					color.Red(" Cannot remove %s: %v\n", dest, err)
+					color.Red(" Failed to remove %s: %v\n", dest, err)
 				} else {
 					color.Red(" Removed: %s\n", dest)
 				}
