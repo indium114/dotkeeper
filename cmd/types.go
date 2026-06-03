@@ -6,10 +6,10 @@ type State struct {
 }
 
 type Keep struct {
-	Links []Link `json:"links"`
+	Links []Link `yaml:"links"`
 }
 
 type Link struct {
-	Source string `json:"source"`
-	Target string `json:"target"`
+	Source string `yaml:"source"`
+	Target string `yaml:"target"`
 }

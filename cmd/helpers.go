@@ -3,23 +3,24 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/fatih/color"
+	"github.com/goccy/go-yaml"
 	"os"
 	"path/filepath"
-	"github.com/fatih/color"
 )
 
 func LoadKeep(keepRoot string) ([]Link, error) {
 	var allLinks []Link
 
-	keepFile := filepath.Join(keepRoot, "keep.json")
+	keepFile := filepath.Join(keepRoot, "keep.yaml")
 	data, err := os.ReadFile(keepFile)
 	if err != nil {
-		return nil, fmt.Errorf(" Failed to read keep.json: %w", err)
+		return nil, fmt.Errorf(" Failed to read keep.yaml: %w", err)
 	}
 
 	var keep Keep
-	if err := json.Unmarshal(data, &keep); err != nil {
-		return nil, fmt.Errorf(" Failed to parse keep.json: %w", err)
+	if err := yaml.Unmarshal(data, &keep); err != nil {
+		return nil, fmt.Errorf(" Failed to parse keep.yaml: %w", err)
 	}
 	allLinks = append(allLinks, keep.Links...)
 
@@ -28,7 +29,7 @@ func LoadKeep(keepRoot string) ([]Link, error) {
 		return nil, fmt.Errorf(" Failed to get hostname: %w", err)
 	}
 
-	hSpecFile := filepath.Join(keepRoot, "hSpecs", hostname+".json")
+	hSpecFile := filepath.Join(keepRoot, "hSpecs", hostname+".yaml")
 	if _, err := os.Stat(hSpecFile); err == nil {
 		hData, err := os.ReadFile(hSpecFile)
 		if err != nil {
@@ -36,7 +37,7 @@ func LoadKeep(keepRoot string) ([]Link, error) {
 		}
 
 		var hSpec Keep
-		if err := json.Unmarshal(hData, &hSpec); err != nil {
+		if err := yaml.Unmarshal(hData, &hSpec); err != nil {
 			return nil, fmt.Errorf(" Failed to parse hSpec: %w", err)
 		}
 		color.Green("󰌨 Applying hSpec for host: " + hostname)
